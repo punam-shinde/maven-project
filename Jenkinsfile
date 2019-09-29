@@ -33,5 +33,16 @@ agent any
 					}
 				}
 		}
+		
+		stage ('Install')
+		{
+			
+			steps {
+				withMaven(maven: '/usr/share/apache-maven') 
+					{
+						sh 'mvn install'
+					}
+				}
+		}
 	}
 }
