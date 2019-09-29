@@ -8,12 +8,14 @@ agent any{
 		}
 
 	
-		stage "code test"
-	{	
-		withMaven(maven: '/usr/share/apache-maven') 
-		{
-			sh 'mvn test'
+		stage "code test"{
+			
+			steps {
+				withMaven(maven: '/usr/share/apache-maven') 
+				{
+					sh 'mvn test'
+				}
+				}
 		}
-	}
 	}
 }
