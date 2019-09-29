@@ -50,7 +50,7 @@ agent any
 			
 			steps {
   				sshagent (credentials: ['172.31.35.229']) {
-    				sh 'scp -o StrictHostKeyChecking=no **/*.war ec2-user 172.31.35.229 /var/lib/tomcat/webapps'
+    				sh 'scp -o StrictHostKeyChecking=no */target/*.war ec2-user 172.31.35.229 /var/lib/tomcat/webapps'
   				}
 				}
 		}
