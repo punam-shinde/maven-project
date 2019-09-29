@@ -12,13 +12,25 @@ agent any
 
 
 
-		stage ('code test'){
+		stage ('code test')
+		{
 			
 			steps {
 				withMaven(maven: '/usr/share/apache-maven') 
-				{
-					sh 'mvn test'
+					{
+						sh 'mvn test'
+					}
 				}
+		}
+		
+		stage ('Package')
+		{
+			
+			steps {
+				withMaven(maven: '/usr/share/apache-maven') 
+					{
+						sh 'mvn package'
+					}
 				}
 		}
 	}
