@@ -11,6 +11,6 @@ node{
       }
       
       stage ('docker image build') {
-      sh 'docker build -t punam-shinde/punam-app:1.0.0 .'
+      sh 'docker build -t punam29/my-app:1.0.0 .'
       }
   }
