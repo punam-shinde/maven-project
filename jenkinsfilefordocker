@@ -1,5 +1,12 @@
 node{
-stage ('scm checkout') {
-git 'https://github.com/punam-shinde/maven-project'
-}
+  stage ('scm checkout') {
+        git 'https://github.com/punam-shinde/maven-project'
+        }
+  stage('checkout to different branch'){
+        sh "git branch -r"
+         sh "git checkout master"
+       }
+       stage ('package stage') {
+        sh label: '', script: 'mvn clean package '
+      }
 }
