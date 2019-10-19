@@ -15,7 +15,7 @@ node{
       }
       stage ('Push Docker image to DockerHub') {
             withCredentials([string(credentialsId: 'dockerhubaccount', variable: 'dockerhubaccount')]) {
-                sh "docker login -u punam29 -p ${dockerhubaccount}"
+                sh "docker login -u punam29 -p ${dockerHubAccount}"
                   }
             sh 'docker push punam29/my-app:1.0.0'
        }
